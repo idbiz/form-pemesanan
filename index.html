@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>idbiz.id - Form Pemesanan</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Major+Mono+Display&family=Nabla&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300..700&family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/fx.css" />
+    <link rel="stylesheet" href="assets/css/element.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script src="assets/js/script.js"></script>
+  </head>
+  <body class="bg-[#201E43] font-['Poppins']">
+    <!-- ## NAVBAR ## -->
+    <nav
+      class="flex items-center top-0 sticky backdrop-blur-sm border-b border-gray-700 text-white bg-gray-900/80 grid grid-cols-1 md:grid-cols-3 text-center px-2 xl:px-24 py-4 z-50"
+    >
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <img
+            class="rounded-full h-8 w-8"
+            src="http://qplexus.com/wp-content/uploads/2016/02/default-logo.png"
+            alt=""
+          />
+          <h1 class="font-bold text-2xl">idBiz.</h1>
+        </div>
+        <div
+          id="menu-collapse"
+          class="text-2xl flex items-center align-center justify-end linked md:hidden"
+        >
+          <i class="ph ph-list"></i>
+        </div>
+      </div>
+
+      <div class="md:col-span-2 mt-2 md:m-0 no-copy">
+        <ul
+          id="menu-list"
+          class="flex justify-between items-center text-xs md:text-md lg:text-lg gap-4 hidden md:flex"
+        >
+          <li id="home" class="linked">
+            <a href="https://id.biz.id/">Home</a>
+          </li>
+          <li id="abt-us" class="linked">About Us</li>
+          <li class="linked">Services</li>
+          <li class="linked hidden md:block">Become a Seller</li>
+          <li class="cursor-default text-[#134B70] hidden md:block">|</li>
+          <li id="sign-in" class="linked">Sign In</li>
+          <li id="join-in" class="btn linked-btn">Join</li>
+        </ul>
+      </div>
+    </nav>
+    <!-- ## END NAVBAR ## -->
+
+    <!-- CONTENT -->
+    <div class="container mx-auto px-4 py-12">
+      <!-- Form Container -->
+      <div
+        id="form-container"
+        class="max-w-3xl mx-auto p-8 rounded-xl shadow-2xl bg-white border border-gray-200 opacity-0 translate-y-10"
+      >
+        <!-- Header -->
+        <div class="text-center">
+          <h1
+            class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-blue-600 to-purple-600 mb-4"
+          >
+            Design Services Order Form
+          </h1>
+          <p class="text-gray-600 text-lg">
+            Complete your order details before placing your order!
+          </p>
+        </div>
+
+        <form
+          id="orderForm"
+          action="/submit-order"
+          method="POST"
+          class="mt-8 space-y-6 text-gray-900"
+        >
+          <!-- Nama dan Email -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Nama -->
+            <div class="input-group">
+              <label for="name" class="block text-sm font-medium text-gray-900"
+                >Full Name*</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Full name"
+                required
+                class="input-field w-full mt-1 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 border-gray-300 shadow-sm"
+              />
+            </div>
+
+            <!-- Email -->
+            <div class="input-group">
+              <label for="email" class="block text-sm font-medium text-gray-900"
+                >Email*</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+                class="input-field w-full mt-1 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 border-gray-300 shadow-sm"
+              />
+            </div>
+
+            <!-- No Telp -->
+            <div class="input-group">
+              <label for="phone" class="block text-sm font-medium text-gray-900"
+                >Phone Number*</label
+              >
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                placeholder="Phone number"
+                required
+                class="input-field w-full mt-1 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 border-gray-300 shadow-sm"
+              />
+            </div>
+
+            <!-- Jenis Desain -->
+            <div class="input-group">
+              <label
+                for="designType"
+                class="block text-sm font-medium text-gray-900"
+                >Design Type*</label
+              >
+              <select
+                id="designType"
+                name="designType"
+                required
+                class="input-field w-full mt-1 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 border-gray-300 shadow-sm"
+              >
+                <option value="pilih" disabled selected>
+                  Choose a Design Type
+                </option>
+                <option value="logo">Logo Design</option>
+                <option value="brochure">Brochure Design</option>
+                <option value="poster">Poster Design</option>
+                <option value="banner">Banner Design</option>
+                <option value="flyer">Flyer Design</option>
+                <option value="packaging">Packaging Design</option>
+                <option value="web">Website Design</option>
+                <option value="illustration">Illustration Design</option>
+                <option value="tshirt">T-Shirt Design</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Deskripsi -->
+          <div class="input-group">
+            <label
+              for="description"
+              class="block text-sm font-medium text-gray-900"
+              >Order Description*</label
+            >
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Order description"
+              rows="4"
+              required
+              class="input-field w-full mt-1 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 border-gray-300 shadow-sm"
+            ></textarea>
+          </div>
+
+          <!-- File Upload (Optional) -->
+          <div class="input-group">
+            <label for="file" class="block text-sm font-medium text-gray-900"
+              >Upload References (optional)</label
+            >
+            <input
+              type="file"
+              id="file"
+              name="file"
+              class="input-field w-full mt-1 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 border-gray-300 shadow-sm"
+            />
+          </div>
+
+          <!-- Submit -->
+          <div class="flex justify-center mt-6 space-x-4">
+            <button
+              onclick="return window.location.href='../index.html'"
+              type="button"
+              class="px-6 py-3 bg-gray-600 text-white font-medium rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 shadow-lg"
+            >
+              Back
+            </button>
+            <button
+              type="submit"
+              class="px-6 py-3 bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-lg"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- CONTENT END -->
+
+    <!-- ## FOOTER ## -->
+    <footer class="bg-gray-900 text-white py-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 px-4 lg:px-24">
+        <!-- ## Company ## -->
+        <div class="flex flex-col gap-4">
+          <h1 class="text-2xl font-bold">Company</h1>
+          <div class="flex flex-col text-sm text-gray-500 footer-list">
+            <a href="#">About idBiz</a>
+            <a href="#">Help & Support</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Press & News</a>
+            <a href="#">Partnerships</a>
+            <a href="#">Affiliates</a>
+          </div>
+        </div>
+
+        <!-- ## Customer ## -->
+        <div class="flex flex-col gap-4">
+          <h1 class="text-xl font-bold">For Customer</h1>
+          <div class="flex flex-col text-sm text-gray-500 footer-list">
+            <a href="#">How idBiz Works</a>
+            <a href="#">idBiz Guides</a>
+            <a href="#">idBiz Learn</a>
+            <a href="#">idBiz Answers</a>
+            <a href="#">Ask idBiz</a>
+          </div>
+        </div>
+
+        <!-- ## Designer ## -->
+        <div class="flex flex-col gap-4">
+          <h1 class="text-xl font-bold">For Designer</h1>
+          <div class="flex flex-col text-sm text-gray-500 footer-list">
+            <a href="#">Become an idbiz Seller</a>
+            <a href="#">Become an Agency</a>
+            <a href="#">Community Hub</a>
+            <a href="#">Forum</a>
+            <a href="#">Events</a>
+          </div>
+        </div>
+
+        <!-- ## Categories ## -->
+        <div class="flex flex-col gap-4">
+          <h1 class="text-xl font-bold">Categories</h1>
+          <div class="flex flex-col text-sm text-gray-500 footer-list">
+            <a href="#">Design Graphic</a>
+            <a href="#">Photography</a>
+            <a href="#">Filmatography</a>
+            <a href="#">Editing</a>
+            <a href="#">Programming</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ## COPYRIGHT ## -->
+
+      <div
+        class="mx-4 lg:mx-24 mt-4 pt-2 text-gray-500 border-t border-gray-700"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 items-center md:items-baseline"
+        >
+          <div
+            class="flex gap-4 items-baseline justify-center md:justify-start"
+          >
+            <h1 class="font-bold text-2xl">idBiz.</h1>
+            <p class="text-sm">© 2024 idBiz. All rights reserved.</p>
+          </div>
+
+          <div class="flex gap-4 justify-center md:justify-end">
+            <i class="ph ph-instagram-logo text-2xl"></i>
+            <i class="ph ph-facebook-logo text-2xl"></i>
+            <i class="ph ph-discord-logo text-2xl"></i>
+            <i class="ph ph-x-logo text-2xl"></i>
+            <i class="ph ph-linkedin-logo text-2xl"></i>
+            <div
+              class="flex items-center gap-2 border border-gray-800 rounded-2xl px-2"
+            >
+              <i class="ph ph-globe text-2xl"></i>
+              <p class="text-md">English</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
