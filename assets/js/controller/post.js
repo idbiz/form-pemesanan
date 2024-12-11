@@ -15,9 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Fetch categories and populate the select dropdown
     fetch("https://asia-southeast2-awangga.cloudfunctions.net/idbiz/design-category", {
-      headers: {
-        "login": loginToken
-      }
+      method: "GET"
     })
       .then(response => {
         if (!response.ok) {
@@ -65,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Login": loginToken
+          "login": loginToken
         },
         body: JSON.stringify(payload),
       })
