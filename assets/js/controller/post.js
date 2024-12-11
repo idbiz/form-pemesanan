@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fetch categories and populate the select dropdown
     fetch("https://asia-southeast2-awangga.cloudfunctions.net/idbiz/design-category", {
       headers: {
-        "Login": loginToken
+        "login": loginToken
       }
     })
       .then(response => {
