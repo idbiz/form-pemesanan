@@ -95,6 +95,7 @@
           action="/submit-order"
           method="POST"
           class="mt-8 space-y-6 text-gray-900"
+          enctype="multipart/form-data"
         >
           <!-- Nama dan Email -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -135,8 +136,8 @@
               >
               <input
                 type="text"
-                id="phone"
-                name="phone"
+                id="phone_number"
+                name="phone_number"
                 placeholder="Phone number"
                 required
                 class="input-field w-full mt-1 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 border-gray-300 shadow-sm"
@@ -146,29 +147,20 @@
             <!-- Jenis Desain -->
             <div class="input-group">
               <label
-                for="designType"
+                for="category"
                 class="block text-sm font-medium text-gray-900"
                 >Design Type*</label
               >
               <select
-                id="designType"
-                name="designType"
+                id="category"
+                name="category"
                 required
                 class="input-field w-full mt-1 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 border-gray-300 shadow-sm"
               >
                 <option value="pilih" disabled selected>
                   Choose a Design Type
                 </option>
-                <option value="logo">Logo Design</option>
-                <option value="brochure">Brochure Design</option>
-                <option value="poster">Poster Design</option>
-                <option value="banner">Banner Design</option>
-                <option value="flyer">Flyer Design</option>
-                <option value="packaging">Packaging Design</option>
-                <option value="web">Website Design</option>
-                <option value="illustration">Illustration Design</option>
-                <option value="tshirt">T-Shirt Design</option>
-                <option value="other">Other</option>
+                
               </select>
             </div>
           </div>
@@ -197,8 +189,8 @@
             >
             <input
               type="file"
-              id="file"
-              name="file"
+              id="upload_references"
+              name="upload_references"
               class="input-field w-full mt-1 px-4 py-2 border rounded-md focus:ring-blue-500 focus:border-blue-500 border-gray-300 shadow-sm"
             />
           </div>
@@ -310,7 +302,7 @@
       </div>
     </footer>
 
-    <script src="../js/nav.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/controller/post.js"></script>
   </body>
 </html>
